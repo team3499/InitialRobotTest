@@ -14,6 +14,6 @@ public class RobotMap {
     public static int stickHat2           = 2;
 
     // Digital IO ports
-    public static int proximitySensorPort = 1;
-    public static int ledPort             = 2;
+    public static int proximitySensorPort = 0;
+    public static int ledPort             = 1;
 }
