@@ -1,14 +1,27 @@
 package org.usfirst.frc.team3499.robot;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
-import org.usfirst.frc.team3499.robot.commands.ExampleCommand;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
+import org.usfirst.frc.team3499.robot.commands.SteadyLedCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-    //// CREATING BUTTONS
+	Joystick stick = new Joystick(0);
+	
+	Button trigger = new JoystickButton(stick, 1);
+	Button hat2    = new JoystickButton(stick, 2);
+	
+	public OI() {
+        trigger.whileHeld(new SteadyLedCommand(true));
+        hat2.whileHeld(new SteadyLedCommand(false));
+	}
+
+	//// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
     // number it is.
@@ -35,4 +48,3 @@ public class OI {
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
 }
-
