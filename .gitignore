@@ -1,0 +1,10 @@
+.metadata
+/.idea
+/bin
+/build
+/dist
+
+*.class
+#*.jar
+*.war
+*.ear
