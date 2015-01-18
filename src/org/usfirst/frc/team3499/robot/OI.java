@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 import org.usfirst.frc.team3499.robot.RobotMap;
-import org.usfirst.frc.team3499.robot.commands.SteadyLedCommand;
+import org.usfirst.frc.team3499.robot.commands.BlinkDebugLedCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -18,8 +18,8 @@ public class OI {
     Button hat2    = new JoystickButton(stick, RobotMap.stickHat2);
 
     public OI() {
-        trigger.whileHeld(new SteadyLedCommand(true));
-        hat2.whileHeld(new SteadyLedCommand(false));
+        trigger.whenPressed(new BlinkDebugLedCommand(5));
+        hat2.whenPressed(new BlinkDebugLedCommand(2));
     }
 
     //// CREATING BUTTONS
