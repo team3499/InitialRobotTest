@@ -5,18 +5,17 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DigitalOutput;
 
 import org.usfirst.frc.team3499.robot.RobotMap;
-import org.usfirst.frc.team3499.robot.commands.BlinkLedCommand;
 
 /**
- *
+ *  Subsystem for a simple debug LED plugged into a RoboRIO DIO
  */
-public class LedSubsystem extends Subsystem {
+public class DebugLedSubsystem extends Subsystem {
 
-    DigitalOutput led = new DigitalOutput(RobotMap.ledPort);
+    DigitalOutput led = new DigitalOutput(RobotMap.debugLedPort);
     boolean ledState  = false;
 
     public void initDefaultCommand() {
-        setDefaultCommand(new BlinkLedCommand());
+
     }
 
     public void set(boolean state) {

@@ -5,8 +5,8 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import org.usfirst.frc.team3499.robot.commands.BlinkLedCommand;
-import org.usfirst.frc.team3499.robot.subsystems.LedSubsystem;
+import org.usfirst.frc.team3499.robot.commands.BlinkDebugLedCommand;
+import org.usfirst.frc.team3499.robot.subsystems.DebugLedSubsystem;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -17,7 +17,7 @@ import org.usfirst.frc.team3499.robot.subsystems.LedSubsystem;
  */
 public class Robot extends IterativeRobot {
 
-    public static final LedSubsystem ledSubsystem = new LedSubsystem();
+    public static final DebugLedSubsystem debugLedSubsystem = new DebugLedSubsystem();
     public static OI oi;
 
     Command autonomousCommand;

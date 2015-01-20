@@ -7,13 +7,13 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class SteadyLedCommand extends Command {
+public class SteadyDebugLedCommand extends Command {
 
     boolean state = false;
 
-    public SteadyLedCommand(boolean state) {
+    public SteadyDebugLedCommand(boolean state) {
         // Use requires() here to declare subsystem dependencies
-        requires(Robot.ledSubsystem);
+        requires(Robot.debugLedSubsystem);
         this.state = state;
     }
 
@@ -23,7 +23,7 @@ public class SteadyLedCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.ledSubsystem.set(state);
+        Robot.debugLedSubsystem.set(state);
     }
 
     // Make this return true when this Command no longer needs to run execute()
