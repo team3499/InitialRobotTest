@@ -5,8 +5,9 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import org.usfirst.frc.team3499.robot.commands.BlinkDebugLedCommand;
+import org.usfirst.frc.team3499.robot.commands.DetectProximityCommand;
 import org.usfirst.frc.team3499.robot.subsystems.DebugLedSubsystem;
+import org.usfirst.frc.team3499.robot.subsystems.ProximitySensorSubsystem;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -17,7 +18,8 @@ import org.usfirst.frc.team3499.robot.subsystems.DebugLedSubsystem;
  */
 public class Robot extends IterativeRobot {
 
-    public static final DebugLedSubsystem debugLedSubsystem = new DebugLedSubsystem();
+    public static final DebugLedSubsystem        debugLedSubsystem        = new DebugLedSubsystem();
+    public static final ProximitySensorSubsystem proximitySensorSubsystem = new ProximitySensorSubsystem();
     public static OI oi;
 
     Command autonomousCommand;
@@ -29,7 +31,7 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
         oi = new OI();
         // instantiate the command used for the autonomous period
-        // autonomousCommand = new BlinkLedCommand();
+        autonomousCommand = new DetectProximityCommand();
     }
 
     public void disabledPeriodic() {
