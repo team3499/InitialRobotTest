@@ -5,7 +5,6 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import edu.wpi.first.wpilibj.can.;
 import edu.wpi.first.wpilibj.CANJaguar;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Joystick;
@@ -41,14 +40,14 @@ public class Robot extends IterativeRobot {
         oi = new OI();
         // instantiate the command used for the autonomous period
         // autonomousCommand = new BlinkLedCommand();
-        //try {
+        try {
             motor1 = new CANJaguar(RobotMap.driveMotorLFCanID);   // Front Left
             motor2 = new CANJaguar(RobotMap.driveMotorLRCanID);   // Rear Left
             motor3 = new CANJaguar(RobotMap.driveMotorRFCanID);   // Front Right
             motor4 = new CANJaguar(RobotMap.driveMotorRRCanID);   // Rear Right
-        //} catch (CANTimeoutException ex) {
-        //    ex.printStackTrace();
-        //}
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
 
         robotDrive = new RobotDrive(motor1, motor2, motor3, motor4);
         joystick = new Joystick(RobotMap.controlStickPort);
